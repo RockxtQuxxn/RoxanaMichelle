@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{% block body %}
+<h2 align="center">Inventario</h2>
+<table class="table table-bordered table-striped" id="Inventario">
+	<thead>
+		<tr>
+			<th>Prodecto</th>
+			<th>Cantidad de Producto</th>
+			<th>Estado</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for inventarioshow in context_list  %}
+		<tr>
+			<td>{{inventarioshow.producto}}</td>
+			<td>{{inventarioshow.cant_producto}}</td>
+			<td>
+				{% if inventarioshow.existe %}
+					Exite
+				{% else %}
+					No Existe
+				{% endif %}
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+
+</table>
